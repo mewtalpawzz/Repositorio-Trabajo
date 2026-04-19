@@ -1,38 +1,98 @@
-/* ================================================================
-   estilos.css — Hoja de estilos compartida del proyecto
-   ================================================================
-   INSTRUCCIONES:
-   - Este fichero es COMÚN a todas las páginas del proyecto.
-   - Todos los miembros del equipo añadirán sus estilos aquí.
-   - Marcad cada sección con comentarios para tener un código organizado. 
-   Por ejemplo como sigue a continuación, pero se puede modificar para adaptarse
-   a vuestras necesidades
-   ================================================================ */
-/* ----------------------------------------------------------------
-   1. ESTILOS GENERALES
-   ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
-/* TODO: Añadir estilos generales (fuente, colores base, márgenes...) */
+:root {
+  --crema-fondo:  #F5F0E8;
+  --crema-card:   #FAF7F2;
+  --beige-borde:  #D9CEBC;
+  --acento:       #B8935A;
+  --acento-claro: #EAD9BF;
+  --texto-oscuro: #3A3228;
+  --texto-medio:  #7A6F63;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lato', sans-serif; background: var(--crema-fondo); color: var(--texto-oscuro); line-height: 1.7; }
 
+/* NAV */
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: var(--crema-card); border-bottom: 1px solid var(--beige-borde);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--texto-oscuro); text-decoration: none; }
+.nav-logo span { color: var(--acento); }
+.nav-enlaces { list-style: none; display: flex; gap: 2rem; }
+.nav-enlaces a { text-decoration: none; font-size: 0.95rem; color: var(--texto-medio); transition: color 0.2s; }
+.nav-enlaces a:hover { color: var(--acento); }
 
-/* ----------------------------------------------------------------
-   2. CABECERA Y NAVEGACIÓN 
-   ---------------------------------------------------------------- */
+/* HERO */
+header {
+  text-align: center; padding: 6rem 2rem 5rem;
+  border-bottom: 1px solid var(--beige-borde);
+}
+.hero-tag { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--acento); margin-bottom: 1.2rem; }
+header h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; max-width: 650px; margin: 0 auto 2rem; line-height: 1.3; }
+.boton {
+  display: inline-block; background: var(--acento); color: var(--crema-card);
+  text-decoration: none; padding: 0.75rem 2rem; border-radius: 30px;
+  font-size: 0.95rem; transition: background 0.2s;
+}
+.boton:hover { background: var(--texto-oscuro); }
 
-/* ----------------------------------------------------------------
-   3. PIE DE PÁGINA (footer)
-   ---------------------------------------------------------------- */
+/* SOBRE */
+.sobre {
+  display: flex; align-items: center; gap: 2.5rem;
+  max-width: 800px; margin: 4rem auto; padding: 0 2rem;
+}
+.avatar {
+  width: 100px; height: 100px; border-radius: 50%; flex-shrink: 0;
+  background: var(--acento-claro); border: 3px solid var(--beige-borde);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--acento);
+}
+.sobre h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.4rem; }
+.sobre p { color: var(--texto-medio); font-size: 1rem; }
 
+/* SECCIONES */
+.secciones { max-width: 1000px; margin: 0 auto 5rem; padding: 0 2rem; }
+.secciones h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.3rem; }
+.secciones .sub { color: var(--texto-medio); font-size: 0.95rem; padding-bottom: 1rem; border-bottom: 1px solid var(--beige-borde); margin-bottom: 2rem; }
 
-/* ----------------------------------------------------------------
-   6. ESTILOS ESPECÍFICOS DE CADA PÁGINA
-      (añadir una subsección por cada página del equipo)
-   ---------------------------------------------------------------- */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 
-/* --- Página: index.html --- */
+.card {
+  background: var(--crema-card); border: 1px solid var(--beige-borde);
+  border-radius: 12px; overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--acento); }
 
+.card-img {
+  width: 100%; height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+}
+.card-img.videojuegos { background: #E8E0D0; }
+.card-img.musica      { background: #E4DDD5; }
+.card-img.peliculas   { background: #DDD7CE; }
 
-/* --- Página: xxxxxx.html --- */
+.card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+.card-tag { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--acento); }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.4; }
+.card-link { margin-top: auto; font-size: 0.85rem; color: var(--acento); padding-top: 0.8rem; border-top: 1px solid var(--beige-borde); }
 
+/* FOOTER */
+footer { text-align: center; padding: 2rem; border-top: 1px solid var(--beige-borde); background: var(--crema-card); }
+footer p { font-size: 0.9rem; color: var(--texto-medio); margin-bottom: 0.5rem; }
+.footer-enlaces { list-style: none; display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.5rem; }
+.footer-enlaces a { text-decoration: none; font-size: 0.85rem; color: var(--acento); }
+.footer-enlaces a:hover { color: var(--texto-oscuro); }
 
-/* --- Página:  xxxxxx.html --- */
+@media (max-width: 700px) {
+  nav { flex-direction: column; gap: 1rem; }
+  header h1 { font-size: 2rem; }
+  .sobre { flex-direction: column; text-align: center; }
+  .grid { grid-template-columns: 1fr; }
+}
