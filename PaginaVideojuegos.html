@@ -3,104 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- CAMBIA ESTO: título de la pestaña del navegador -->
-  <title>Nombre de la página · Mi Blog</title>
-
-  <!-- Enlace al archivo de estilos compartido -->
-
+  <title>Videojuegos · Mi Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CssPopUp.css" />
 </head>
 <body>
 
-
-  <!-- ============================================================
-       NAVEGACIÓN
-       Marca con class="activo" el enlace de la página actual
-  ============================================================ -->
   <nav>
-    mi<span>blog</span>
+    <a href="index.html" class="nav-logo">mi<span>blog</span></a>
     <ul class="nav-enlaces">
-      <li>Inicio</a></li>
-      <li>Videojuegos</a></li>
-      <li>Música</a></li>
-      <li>Películas</a></li>
+      <li><a href="">Inicio</a></li>
+      <li><a href="" class="activo">Videojuegos</a></li>
+      <li><a href="">Música</a></li>
+      <li><a href="">Películas</a></li>
     </ul>
   </nav>
 
+  <header class="pagina-hero">
+    <span class="icono">🎮</span>
+    <p class="pagina-tag">Sección</p>
+    <h1>Videojuegos</h1>
+  </header>
 
-  <!-- ============================================================
-       CABECERA
-       Cambia el icono, la etiqueta y el título
-       El botón es opcional: bórralo si no lo necesitas
-  ============================================================ -->
-  <div class="cabecera">
-    <div class="icono">✦</div>              <!-- cambia el emoji/icono -->
-    <p class="etiqueta">Sección</p>         <!-- texto pequeño de arriba -->
-    <h1>Título de la página</h1>            <!-- título principal -->
-    <!-- <a href="#contenido" class="boton">Texto del botón</a> -->
-  </div>
-
-
-  <!-- ============================================================
-       CONTENIDO PRINCIPAL
-       Aquí va todo el cuerpo de la página
-  ============================================================ -->
-  <main class="contenido" id="contenido">
-
-    <!-- Ejemplo: bloque de perfil (úsalo solo en el inicio) -->
-    <!--
-    <div class="perfil">
-      <div class="avatar">AL</div>
-      <div>
-        <h2>Nombre del autor</h2>
-        <p>Descripción breve sobre el blog o el autor.</p>
-      </div>
-    </div>
-    -->
-
-    <!-- Ejemplo: sección con tarjetas -->
-    <h2 class="seccion-titulo">Título de la sección</h2>
-    <p class="seccion-sub">Subtítulo o descripción breve</p>
+  <main class="contenido">
+    <h2>Entradas recientes</h2>
+    <p class="sub">Lo último que he jugado y contado</p>
 
     <div class="grid">
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="NieR: Automata"
+           data-video="https://www.youtube.com/embed/wJxNhJ8cjOU"
+           data-review="NieR: Automata es mucho más que un videojuego: es un ensayo filosófico jugable. Yoko Taro construye un mundo post-apocalíptico donde androides y máquinas libran una guerra eterna, pero lo verdaderamente revolucionario es cómo utiliza la mecánica del juego para transmitir sus ideas sobre el existencialismo, el propósito y la identidad.<br><br>2B y 9S son protagonistas fascinantes, y su relación evoluciona de formas que pocos guiones de videojuegos han logrado. El combate es frenético y satisfactorio, pero cada rincón del mapa esconde textos, memorias y diálogos que amplían una narrativa de capas casi infinitas.<br><br>Sus múltiples finales no son trucos; son la declaración de intenciones de un creador que confía en la inteligencia del jugador. Una obra que se recuerda mucho después de apagar la consola.">
+        <p class="card-tag">Análisis</p>
+        <h3>NieR: Automata</h3>
+        <p>Filosofía existencial camuflada de acción frenética. Yoko Taro en estado puro.</p>
+        <p class="card-fecha">Abril 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Resident Evil 4 Remake"
+           data-video="https://www.youtube.com/embed/j5Xv2lMsmJ8"
+           data-review="Revisitar uno de los juegos más influyentes de la historia es una apuesta de alto riesgo. Capcom no solo salió airosa: entregó una lección magistral sobre cómo modernizar un clásico sin traicionar su esencia.<br><br>El remake mantiene el ritmo trepidante del original, pero introduce a Leon con una profundidad emocional que el juego de 2005 apenas esbozaba. La historia gana peso real, y el diseño de niveles —el pueblo, el castillo, la isla— se siente denso y lleno de secretos ejecutados con el motor RE Engine a pleno rendimiento.<br><br>El nuevo sistema de parry añade una capa táctica que hace cada encuentro más satisfactorio. Una demostración de que los remakes pueden ser algo más que nostalgia enlatada.">
+        <p class="card-tag">Recomendación</p>
+        <h3>Resident Evil 4 Remake</h3>
+        <p>La reinvención perfecta del survival horror. Capcom demuestra cómo se hace un remake.</p>
+        <p class="card-fecha">Marzo 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Zelda: Ocarina of Time"
+           data-video="https://www.youtube.com/embed/bNymE27G5yM"
+           data-review="Hablar de Ocarina of Time podría parecer arqueología, pero sería un error: este juego inventó un lenguaje visual y de diseño que todavía hablan los mejores títulos de aventura actuales. El Z-targeting, la exploración de mazmorras temáticas, la narrativa distribuida por el mapa… todo nació aquí.<br><br>El viaje de Link a través del tiempo no es solo un recurso narrativo brillante; es una forma de estructurar un mundo que se siente vivo y consecuente. Hyrule cambia, envejece y sufre, y ese contraste entre la inocencia de la infancia y la crudeza de la edad adulta es emocionalmente poderoso aunque nunca se exprese con palabras altisonantes.<br><br>Ningún jugador debería ignorar esta pieza. No como reliquia, sino como obra de arte funcional que sigue enseñando a diseñadores décadas después de su lanzamiento.">
+        <p class="card-tag">Clásico</p>
+        <h3>Zelda: Ocarina of Time</h3>
+        <p>La obra que inventó el lenguaje del juego de aventuras en 3D. Atemporal.</p>
+        <p class="card-fecha">Marzo 2026</p>
       </div>
 
     </div>
-
   </main>
 
+  <!-- Modal — orden: cabecera → vídeo → reseña → comentarios -->
+  <div id="dynamicModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
 
-  <!-- Enlace volver (úsalo solo en páginas interiores, no en el inicio) -->
-  <!-- <a href="index.html" class="volver">← Volver al inicio</a> -->
+      <button class="close-btn" aria-label="Cerrar">&times;</button>
 
+      <!-- 1. Cabecera -->
+      <div class="modal-cabecera">
+        <p class="modal-tag"></p>
+        <h2 id="modal-title"></h2>
+      </div>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+      <!-- 2. Vídeo -->
+      <div class="video-wrapper">
+        <iframe id="modal-video" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        <div class="video-aviso"></div>
+      </div>
+
+      <!-- 3. Reseña -->
+      <div class="modal-resena" id="modal-resena"></div>
+
+      <!-- 4. Comentarios -->
+      <div class="comments-section">
+        <h3>Comentarios</h3>
+        <div class="comment-form">
+          <input type="text" id="comment-input" placeholder="Escribe tu opinión…" aria-label="Escribe un comentario" />
+          <button id="btn-add-comment">Comentar</button>
+        </div>
+        <div id="comment-list" class="comment-list"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="" class="volver">← Volver al inicio</a>
+
   <footer>
     <p>© 2026 · miblog</p>
   </footer>
 
-
+  <script src="jsPopUp.js"></script>
 </body>
 </html>

@@ -3,104 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- CAMBIA ESTO: título de la pestaña del navegador -->
-  <title>Nombre de la página · Mi Blog</title>
-
-  <!-- Enlace al archivo de estilos compartido -->
-
+  <title>Música · Mi Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CssPopUp.css" />
 </head>
 <body>
 
-
-  <!-- ============================================================
-       NAVEGACIÓN
-       Marca con class="activo" el enlace de la página actual
-  ============================================================ -->
   <nav>
-    mi<span>blog</span>
+    <a href="index.html" class="nav-logo">mi<span>blog</span></a>
     <ul class="nav-enlaces">
-      <li>Inicio</a></li>
-      <li>Videojuegos</a></li>
-      <li>Música</a></li>
-      <li>Películas</a></li>
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Videojuegos</a></li>
+      <li><a href="" class="activo">Música</a></li>
+      <li><a href="">Películas</a></li>
     </ul>
   </nav>
 
+  <header class="pagina-hero">
+    <span class="icono">🎵</span>
+    <p class="pagina-tag">Audioteca</p>
+    <h1>Música</h1>
+  </header>
 
-  <!-- ============================================================
-       CABECERA
-       Cambia el icono, la etiqueta y el título
-       El botón es opcional: bórralo si no lo necesitas
-  ============================================================ -->
-  <div class="cabecera">
-    <div class="icono">✦</div>              <!-- cambia el emoji/icono -->
-    <p class="etiqueta">Sección</p>         <!-- texto pequeño de arriba -->
-    <h1>Título de la página</h1>            <!-- título principal -->
-    <!-- <a href="#contenido" class="boton">Texto del botón</a> -->
-  </div>
-
-
-  <!-- ============================================================
-       CONTENIDO PRINCIPAL
-       Aquí va todo el cuerpo de la página
-  ============================================================ -->
-  <main class="contenido" id="contenido">
-
-    <!-- Ejemplo: bloque de perfil (úsalo solo en el inicio) -->
-    <!--
-    <div class="perfil">
-      <div class="avatar">AL</div>
-      <div>
-        <h2>Nombre del autor</h2>
-        <p>Descripción breve sobre el blog o el autor.</p>
-      </div>
-    </div>
-    -->
-
-    <!-- Ejemplo: sección con tarjetas -->
-    <h2 class="seccion-titulo">Título de la sección</h2>
-    <p class="seccion-sub">Subtítulo o descripción breve</p>
+  <main class="contenido">
+    <h2>Entradas recientes</h2>
+    <p class="sub">Discos, bandas sonoras y canciones que merecen ser escuchadas</p>
 
     <div class="grid">
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Eve — J-Pop de autor"
+           data-video="https://www.youtube.com/embed/OskXF3s0UT8"
+           data-review="Eve es uno de esos artistas que emergen del ecosistema Vocaloid para transformarlo en algo completamente propio. Sus composiciones combinan ritmos vertiginosos con melodías melancólicas de una manera que parece contradictoria sobre el papel, pero que en la práctica resulta adictiva.<br><br>Lo que distingue a Eve del J-Pop convencional es su obsesión por la coherencia visual y sonora: cada vídeo, cada portada, cada letra construye un universo que se sostiene solo. Las temáticas giran alrededor de la alienación juvenil, el miedo a crecer y la búsqueda desesperada de conexión.<br><br>Su catálogo es una entrada perfecta para quien quiera entender la nueva ola del pop japonés de autor: ambicioso, técnicamente impecable y genuinamente emocionante.">
+        <p class="card-tag">Disco</p>
+        <h3>Lo nuevo de Eve</h3>
+        <p>J-Pop de autor que construye universos visuales y sonoros imposibles de ignorar.</p>
+        <p class="card-fecha">Abril 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Attack on Titan — OST de Hiroyuki Sawano"
+           data-video="https://www.youtube.com/embed/8OkpRK2_gVs"
+           data-review="Hiroyuki Sawano es el arquitecto de algunas de las bandas sonoras más viscerales del anime moderno, pero su trabajo en Attack on Titan lo sitúa en una categoría aparte. La clave está en la tensión entre lo grandioso y lo íntimo: coros masivos sobre percusión industrial que ceden paso de repente a un piano solitario.<br><br>Temas como 'Vogel im Käfig' no son simples acompañamientos; son declaraciones emocionales que anticipan y amplifican las escenas que ilustran. El uso de letras en alemán, inglés y japonés fragmentados crea una sensación de caos lingüístico que encaja con la narrativa de un mundo al borde del colapso.<br><br>Una banda sonora que funciona perfectamente fuera de su contexto original. Ponla mientras trabajas y observa cómo lo transforma todo en una épica de proporciones cósmicas.">
+        <p class="card-tag">Banda Sonora</p>
+        <h3>OST Attack on Titan</h3>
+        <p>Coros épicos e industriales que elevan la tragedia y la épica a su máxima expresión.</p>
+        <p class="card-fecha">Marzo 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Pink Floyd — Wish You Were Here"
+           data-video="https://www.youtube.com/embed/hUEhNRJqZJk"
+           data-review="Publicado en 1975 como homenaje a Syd Barrett —fundador de la banda, consumido por la enfermedad mental—, Wish You Were Here es uno de los álbumes más honestos y dolorosos del rock progresivo. No es un disco de virtuosismo técnico; es un lamento.<br><br>La guitarra de David Gilmour en la canción que da título al álbum es posiblemente la más expresiva de su carrera: cada bend, cada vibrato parece respirar con una tristeza inconsolable. Y 'Shine On You Crazy Diamond' es una elegía de veinte minutos que comienza con una sola nota y construye algo que se parece mucho al duelo real.<br><br>La gran pregunta que plantea el álbum —¿cuándo dejamos de estar verdaderamente presentes en nuestra propia vida?— es tan pertinente hoy como hace cincuenta años.">
+        <p class="card-tag">Clásico</p>
+        <h3>Wish You Were Here</h3>
+        <p>El lamento más hermoso del rock progresivo. Una carta de amor y despedida.</p>
+        <p class="card-fecha">Febrero 2026</p>
       </div>
 
     </div>
-
   </main>
 
+  <div id="dynamicModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="close-btn" aria-label="Cerrar">&times;</button>
+      <div class="modal-cabecera">
+        <p class="modal-tag"></p>
+        <h2 id="modal-title"></h2>
+      </div>
+      <div class="video-wrapper">
+        <iframe id="modal-video" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        <div class="video-aviso"></div>
+      </div>
+      <div class="modal-resena" id="modal-resena"></div>
+      <div class="comments-section">
+        <h3>¿Qué te transmite?</h3>
+        <div class="comment-form">
+          <input type="text" id="comment-input" placeholder="Comparte tu experiencia auditiva…" aria-label="Escribe un comentario" />
+          <button id="btn-add-comment">Publicar</button>
+        </div>
+        <div id="comment-list" class="comment-list"></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Enlace volver (úsalo solo en páginas interiores, no en el inicio) -->
-  <!-- <a href="index.html" class="volver">← Volver al inicio</a> -->
+  <a href="" class="volver">← Volver al inicio</a>
 
+  <footer><p>© 2026 · miblog</p></footer>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer>
-    <p>© 2026 · miblog</p>
-  </footer>
-
-
+  <script src="jsPopUp.js"></script>
 </body>
 </html>

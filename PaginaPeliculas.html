@@ -3,104 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- CAMBIA ESTO: título de la pestaña del navegador -->
-  <title>Nombre de la página · Mi Blog</title>
-
-  <!-- Enlace al archivo de estilos compartido -->
-
+  <title>Películas · Mi Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CssPopUp.css" />
 </head>
 <body>
 
-
-  <!-- ============================================================
-       NAVEGACIÓN
-       Marca con class="activo" el enlace de la página actual
-  ============================================================ -->
   <nav>
-    mi<span>blog</span>
+    <a href="index.html" class="nav-logo">mi<span>blog</span></a>
     <ul class="nav-enlaces">
-      <li>Inicio</a></li>
-      <li>Videojuegos</a></li>
-      <li>Música</a></li>
-      <li>Películas</a></li>
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Videojuegos</a></li>
+      <li><a href="">Música</a></li>
+      <li><a href="" class="activo">Películas</a></li>
     </ul>
   </nav>
 
+  <header class="pagina-hero">
+    <span class="icono">🎬</span>
+    <p class="pagina-tag">Séptimo Arte</p>
+    <h1>Películas</h1>
+  </header>
 
-  <!-- ============================================================
-       CABECERA
-       Cambia el icono, la etiqueta y el título
-       El botón es opcional: bórralo si no lo necesitas
-  ============================================================ -->
-  <div class="cabecera">
-    <div class="icono">✦</div>              <!-- cambia el emoji/icono -->
-    <p class="etiqueta">Sección</p>         <!-- texto pequeño de arriba -->
-    <h1>Título de la página</h1>            <!-- título principal -->
-    <!-- <a href="#contenido" class="boton">Texto del botón</a> -->
-  </div>
-
-
-  <!-- ============================================================
-       CONTENIDO PRINCIPAL
-       Aquí va todo el cuerpo de la página
-  ============================================================ -->
-  <main class="contenido" id="contenido">
-
-    <!-- Ejemplo: bloque de perfil (úsalo solo en el inicio) -->
-    <!--
-    <div class="perfil">
-      <div class="avatar">AL</div>
-      <div>
-        <h2>Nombre del autor</h2>
-        <p>Descripción breve sobre el blog o el autor.</p>
-      </div>
-    </div>
-    -->
-
-    <!-- Ejemplo: sección con tarjetas -->
-    <h2 class="seccion-titulo">Título de la sección</h2>
-    <p class="seccion-sub">Subtítulo o descripción breve</p>
+  <main class="contenido">
+    <h2>Entradas recientes</h2>
+    <p class="sub">Reseñas y recomendaciones de lo que he visto últimamente</p>
 
     <div class="grid">
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Super Mario Bros. La Película"
+           data-video="https://www.youtube.com/embed/RjNcTBXTk4I"
+           data-review="La adaptación que los fans llevaban décadas esperando llegó, finalmente, sin decepcionar. Illumination y Nintendo lograron traducir el frenetismo, los colores imposibles y las físicas absurdas del videojuego a la pantalla grande sin que el resultado se sintiera forzado.<br><br>Más allá de la nostalgia, la película brilla por su ritmo implacable y una banda sonora de Brian Tyler que reimagina las composiciones de Koji Kondo con una nueva dimensión épica. Jack Black se roba la función entera con un Bowser que es aterrador y cómico a partes iguales, y su número musical 'Peaches' es uno de los momentos más inesperadamente brillantes del cine de animación reciente.<br><br>No pretende ser una obra de arte profunda. Es un parque de atracciones de 90 minutos diseñado para hacerte sentir como un niño frente a una Super Nintendo, y en eso es absolutamente perfecta.">
+        <p class="card-tag">Reseña</p>
+        <h3>Super Mario Bros.</h3>
+        <p>Un festín visual que captura la esencia del Reino Champiñón como nunca antes.</p>
+        <p class="card-fecha">Abril 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Interstellar"
+           data-video="https://www.youtube.com/embed/LY19rqcxFlg"
+           data-review="Christopher Nolan utiliza la astrofísica más rigurosa no como un fin en sí mismo, sino como vehículo para explorar preguntas que la ciencia nunca podrá responder del todo: ¿qué nos ata a quienes amamos? ¿Cuánto vale la supervivencia si exige abandonar a quienes dan sentido a esa supervivencia?<br><br>La grandeza de Interstellar no está en la precisión científica, sino en la actuación desgarradora de Matthew McConaughey y en la partitura de órgano de Hans Zimmer, que suena como un lamento cósmico que resuena en el pecho mucho después de que los créditos terminen.<br><br>Una película que postula que el amor es, literalmente, la única fuerza capaz de viajar entre dimensiones. Pocos blockbusters se han atrevido a tanto, y menos aún lo han conseguido.">
+        <p class="card-tag">Recomendación</p>
+        <h3>Interstellar</h3>
+        <p>Una epopeya sobre el tiempo, el espacio y los lazos que ninguna distancia puede romper.</p>
+        <p class="card-fecha">Marzo 2026</p>
       </div>
 
-      <div class="card">
-        <p class="card-tag">Categoría</p>
-        <h3>Título de la entrada</h3>
-        <p>Descripción corta.</p>
-        <p class="card-fecha">Mes 2026</p>
+      <div class="card"
+           data-title="Terminator 2: El Juicio Final"
+           data-video="https://www.youtube.com/embed/CRRlbK5w8AE"
+           data-review="James Cameron hizo lo impensable: tomó una película de terror de ciencia ficción perfecta y la superó transformándola en la cumbre del cine de acción. T2 no solo revolucionó el CGI con el T-1000 de metal líquido, sino que construyó sobre esa base técnica un guion de precisión quirúrgica.<br><br>La evolución de Sarah Connor, de víctima traumatizada a guerrera paranoica, es uno de los estudios de personaje más interesantes de la ciencia ficción popular. Schwarzenegger ofrece aquí la mejor interpretación de su carrera encarnando a una máquina que aprende, torpemente, qué significa el valor de la vida humana.<br><br>Treinta años después de su estreno, las persecuciones siguen siendo inalcanzables y la pregunta que plantea —¿puede cambiarse el destino?— sigue sin respuesta. Un clásico absoluto e indestructible.">
+        <p class="card-tag">Clásico</p>
+        <h3>Terminator 2</h3>
+        <p>El pináculo del cine de acción y un hito permanente en la historia de los efectos visuales.</p>
+        <p class="card-fecha">Febrero 2026</p>
       </div>
 
     </div>
-
   </main>
 
+  <div id="dynamicModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="close-btn" aria-label="Cerrar">&times;</button>
+      <div class="modal-cabecera">
+        <p class="modal-tag"></p>
+        <h2 id="modal-title"></h2>
+      </div>
+      <div class="video-wrapper">
+        <iframe id="modal-video" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        <div class="video-aviso"></div>
+      </div>
+      <div class="modal-resena" id="modal-resena"></div>
+      <div class="comments-section">
+        <h3>Comentarios</h3>
+        <div class="comment-form">
+          <input type="text" id="comment-input" placeholder="Deja tu crítica…" aria-label="Escribe un comentario" />
+          <button id="btn-add-comment">Enviar</button>
+        </div>
+        <div id="comment-list" class="comment-list"></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Enlace volver (úsalo solo en páginas interiores, no en el inicio) -->
-  <!-- <a href="index.html" class="volver">← Volver al inicio</a> -->
+  <a href="" class="volver">← Volver al inicio</a>
 
+  <footer><p>© 2026 · miblog</p></footer>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer>
-    <p>© 2026 · miblog</p>
-  </footer>
-
-
+  <script src="jsPopUp.js"></script>
 </body>
 </html>
