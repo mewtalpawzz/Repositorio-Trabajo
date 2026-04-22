@@ -1,132 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const modal        = document.getElementById('dynamicModal');
-  if (!modal) return;
+  const overlay     = document.getElementById('modal');
+  if (!overlay) return;
+  const panel       = overlay.querySelector('.modal-panel');
+  const modalTag    = overlay.querySelector('#modal-tag');
+  const modalTitle  = overlay.querySelector('#modal-title');
+  const videoLink   = overlay.querySelector('#modal-video-link');
+  const videoTitulo = overlay.querySelector('#modal-video-titulo');
+  const resena      = overlay.querySelector('#modal-resena');
+  const input       = overlay.querySelector('#comment-input');
+  const btnComment  = overlay.querySelector('#btn-comment');
+  const commentList = overlay.querySelector('#comment-list');
 
-  const closeBtn     = modal.querySelector('.close-btn');
-  const modalTag     = modal.querySelector('.modal-tag');
-  const modalTitle   = modal.querySelector('#modal-title');
-  const modalVideo   = modal.querySelector('#modal-video');
-  const videoWrapper = modal.querySelector('.video-wrapper');
-  const videoAviso   = modal.querySelector('.video-aviso');
-  const modalResena  = modal.querySelector('#modal-resena');
-  const commentInput = modal.querySelector('#comment-input');
-  const btnComment   = modal.querySelector('#btn-add-comment');
-  const commentList  = modal.querySelector('#comment-list');
-  const cards        = document.querySelectorAll('.card');
+  /* ── Abrir ── */
+  const open = (card) => {
+    if (modalTag)    modalTag.textContent    = card.dataset.tag   || '';
+    if (modalTitle)  modalTitle.textContent  = card.dataset.title || '';
+    if (videoLink)   videoLink.href          = card.dataset.video || '#';
+    if (videoTitulo) videoTitulo.textContent = card.dataset.title || '';
 
-  /* Detecta si la página está siendo servida en local (file://) */
-  const esLocal = location.protocol === 'file:';
-
-  /* ── Abrir modal ── */
-  const openModal = (card) => {
-    const title  = card.dataset.title  || '';
-    const video  = card.dataset.video  || '';
-    const review = card.dataset.review || '';
-    const tag    = card.querySelector('.card-tag')?.textContent || '';
-
-    /* Cabecera */
-    if (modalTag)   modalTag.textContent  = tag;
-    if (modalTitle) modalTitle.textContent = title;
-
-    /* Vídeo */
-    if (esLocal) {
-      /* En local YouTube rechaza la conexión — mostramos aviso y enlace directo */
-      videoWrapper.classList.add('sin-servidor');
-      if (videoAviso) {
-        const ytUrl = video.replace('/embed/', '/watch?v=');
-        videoAviso.innerHTML = `
-          <span class="aviso-icono">▶</span>
-          <p>Los vídeos de YouTube no se pueden cargar<br>al abrir el archivo en local.</p>
-          <a href="${ytUrl}" target="_blank" rel="noopener">Abrir en YouTube →</a>`;
-        videoAviso.style.display = 'flex';
-      }
-      modalVideo.src = '';
-    } else {
-      videoWrapper.classList.remove('sin-servidor');
-      if (videoAviso) videoAviso.style.display = 'none';
-      modalVideo.src = video + '?autoplay=1&rel=0';
+    // Reseña: convierte <br><br> en párrafos reales
+    if (resena) {
+      const parrafos = (card.dataset.review || '').split(/<br\s*\/?>\s*<br\s*\/?>/i);
+      resena.innerHTML = parrafos.map(p => `<p>${p.trim()}</p>`).join('');
     }
 
-    /* Reseña — los párrafos separados por <br><br> se convierten en <p> */
-    if (modalResena) {
-      const parrafos = review.split(/<br\s*\/?><br\s*\/?>/i);
-      modalResena.innerHTML = parrafos.map(p => `<p>${p.trim()}</p>`).join('');
-    }
+    if (commentList) commentList.innerHTML = '<p class="no-comments">Sé el primero en comentar.</p>';
+    if (input) input.value = '';
 
-    /* Comentarios */
-    commentList.innerHTML = '<p class="no-comments">Sé el primero en comentar.</p>';
-    if (commentInput) commentInput.value = '';
-
-    /* Mostrar */
-    modal.style.display = 'flex';
+    overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    modal.scrollTop = 0;
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => modal.classList.add('modal--visible'));
-    });
+    // Doble rAF garantiza que display:flex esté pintado antes de activar la transición CSS
+    requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('abierto')));
   };
 
-  /* ── Cerrar modal ── */
-  const closeModal = () => {
-    modal.classList.remove('modal--visible');
-    setTimeout(() => {
-      modal.style.display = 'none';
-      modalVideo.src = '';
+  /* ── Cerrar ── */
+  const close = () => {
+    overlay.classList.remove('abierto');
+    panel.addEventListener('transitionend', () => {
+      overlay.style.display = 'none';
       document.body.style.overflow = '';
-    }, 300);
+    }, { once: true });
   };
 
-  /* ── Eventos de cierre ── */
-  closeBtn?.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  /* ── Clicks en cards ── */
-  cards.forEach(card => {
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.addEventListener('click', () => openModal(card));
+  /* ── Cards ── */
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => open(card));
     card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
     });
   });
 
-  /* ── Añadir comentario ── */
+  /* ── Cerrar ── */
+  overlay.querySelector('.close-btn')?.addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('abierto')) close();
+  });
+
+  /* ── Comentarios ── */
   const addComment = () => {
-    const text = commentInput?.value.trim();
-    if (!text) {
-      commentInput?.classList.add('shake');
-      setTimeout(() => commentInput?.classList.remove('shake'), 400);
-      return;
-    }
-
-    /* Quitar placeholder si existe */
-    const placeholder = commentList.querySelector('.no-comments');
-    if (placeholder) placeholder.remove();
-
-    /* Crear elemento */
+    const txt = input?.value.trim();
+    if (!txt) return;
+    overlay.querySelector('.no-comments')?.remove();
     const item = document.createElement('div');
-    item.classList.add('comment-item');
-    const textNode = document.createTextNode(text); // evita XSS
+    item.className = 'comment-item';
     const strong = document.createElement('strong');
     strong.textContent = 'Visitante';
-    item.appendChild(strong);
-    item.appendChild(textNode);
+    const span = document.createElement('span');
+    span.textContent = txt;
+    item.append(strong, span);
     commentList.prepend(item);
-
-    /* Feedback visual en el botón */
-    const originalText = btnComment.textContent;
-    btnComment.textContent = '✓ Publicado';
+    input.value = '';
+    const orig = btnComment.textContent;
+    btnComment.textContent = '✓ Enviado';
     btnComment.classList.add('enviado');
-    setTimeout(() => {
-      btnComment.textContent = originalText;
-      btnComment.classList.remove('enviado');
-    }, 1800);
-
-    commentInput.value = '';
-    commentInput.focus();
+    setTimeout(() => { btnComment.textContent = orig; btnComment.classList.remove('enviado'); }, 1800);
   };
 
   btnComment?.addEventListener('click', addComment);
-  commentInput?.addEventListener('keydown', e => { if (e.key === 'Enter') addComment(); });
+  input?.addEventListener('keydown', e => { if (e.key === 'Enter') addComment(); });
 });
