@@ -165,3 +165,81 @@ footer p{font-size:.85rem;color:var(--texto-medio);}
   .modal-video-link,.modal-resena,.comments-section{margin-left:1.2rem;margin-right:1.2rem;}
   .comment-form{flex-direction:column;}
 }
+
+/* ══════════════════════════════════════
+   COMPATIBILIDAD CON plantilla.html
+   Mapea las clases de la plantilla a los
+   estilos ya definidos más arriba.
+   No modifica ninguna regla existente.
+══════════════════════════════════════ */
+
+/* nav: el logo está suelto como texto, no como .nav-logo */
+nav > :first-child {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--texto-oscuro);
+  text-decoration: none;
+}
+nav > :first-child span { color: var(--acento); }
+
+/* .cabecera → equivale a .pagina-hero */
+.cabecera {
+  text-align: center;
+  padding: 4.5rem 2rem 3.5rem;
+  border-bottom: 1px solid var(--beige-borde);
+  background: linear-gradient(180deg, var(--crema-card) 0%, var(--crema-fondo) 100%);
+}
+.cabecera .icono {
+  font-size: 3rem;
+  margin-bottom: .8rem;
+  display: block;
+}
+.cabecera .etiqueta {
+  font-size: .7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+.cabecera h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.cabecera .boton {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: .65rem 1.6rem;
+  background: var(--acento);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 700;
+  transition: background var(--t);
+}
+.cabecera .boton:hover { background: var(--acento-hover); }
+
+/* .seccion-titulo y .seccion-sub → equivalen a .contenido h2 y .sub */
+.seccion-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  margin-bottom: .2rem;
+}
+.seccion-sub {
+  color: var(--texto-medio);
+  font-size: .88rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--beige-borde);
+  margin-bottom: 2rem;
+}
+
+/* .card-fecha → color de texto más visible que var(--beige-borde) */
+.card-fecha { color: var(--texto-medio) !important; }
+
+/* Responsive cabecera */
+@media(max-width:768px) {
+  .cabecera h1 { font-size: 2.2rem; }
+}
