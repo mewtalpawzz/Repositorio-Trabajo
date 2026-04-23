@@ -243,3 +243,150 @@ nav > :first-child span { color: var(--acento); }
 @media(max-width:768px) {
   .cabecera h1 { font-size: 2.2rem; }
 }
+
+/*añadido de mi parte css*/
+
+ /* ── HERO DE INICIO ── */
+    .inicio-hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(180deg, var(--crema-card) 0%, var(--crema-fondo) 100%);
+      border-bottom: 1px solid var(--beige-borde);
+    }
+    .inicio-hero .site-icon {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .inicio-hero .pagina-tag {
+      font-size: .7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: .6rem;
+      font-weight: 700;
+    }
+    .inicio-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+    .inicio-hero .descripcion {
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: .97rem;
+      color: var(--texto-medio);
+      line-height: 1.8;
+    }
+
+    /* ── GRID DE SECCIONES ── */
+    .seccion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Cards de sección: más grandes y con enlace */
+    .card-seccion {
+      background: var(--crema-card);
+      border: 1px solid var(--beige-borde);
+      border-radius: var(--radio);
+      padding: 2rem 1.6rem 1.6rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-seccion::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(184,147,90,.07) 100%);
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+    .card-seccion:hover {
+      transform: translateY(-6px);
+      border-color: var(--acento);
+      box-shadow: 0 10px 28px rgba(58,50,40,.12);
+    }
+    .card-seccion:hover::before { opacity: 1; }
+    .card-seccion:active { transform: translateY(-2px); }
+    .card-seccion:focus-visible {
+      outline: 2px solid var(--acento);
+      outline-offset: 3px;
+    }
+
+    .cs-icono {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: .3rem;
+    }
+    .cs-tag {
+      font-size: .68rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--acento);
+      font-weight: 700;
+    }
+    .card-seccion h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+    .card-seccion > p {
+      font-size: .88rem;
+      color: var(--texto-medio);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .cs-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .8rem;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--acento);
+      letter-spacing: .5px;
+      transition: gap var(--t), color var(--t);
+    }
+    .card-seccion:hover .cs-cta {
+      gap: .7rem;
+      color: var(--acento-hover);
+    }
+
+    /* ── ÚLTIMAS ENTRADAS ── */
+    .ultimas {
+      margin-top: 3.5rem;
+    }
+    .ultimas h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      margin-bottom: .2rem;
+    }
+    .ultimas .sub {
+      color: var(--texto-medio);
+      font-size: .88rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--beige-borde);
+      margin-bottom: 2rem;
+    }
+
+    /* Cards de entradas recientes: reutiliza .card pero con enlace */
+    .card-entrada {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media(max-width:768px) {
+      .inicio-hero h1 { font-size: 2.2rem; }
+      .seccion-grid { grid-template-columns: 1fr; }
+    }
