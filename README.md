@@ -54,7 +54,7 @@
 
 
 - Nombre: Alejandro Bustamante
-  - Features en las que ha trabajado: feature/popUp, feature/cambios_de_html_para_arreglar_el_fallo, 
+  - Features en las que ha trabajado: feature/popUp, feature/cambios_de_html_para_arreglar_el_fallo, feature/cambio-cabecera
   - Archivos modificados: plantilla.html, PaginaVideojuegos.html, PaginaPeliculas.html, PaginaMusica.html, cssPopUp.css, popUp.js.
 
 - Nombre: Hugo Diaz
