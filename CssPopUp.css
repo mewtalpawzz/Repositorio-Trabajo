@@ -243,3 +243,35 @@ nav > :first-child span { color: var(--acento); }
 @media(max-width:768px) {
   .cabecera h1 { font-size: 2.2rem; }
 }
+/* 🎮 VIDEOJUEGOS — azul acero frío */
+body.tema-juegos {
+  --crema-fondo:   #EAEEF5;
+  --crema-card:    #F2F5FA;
+  --beige-borde:   #BBC8DE;
+  --acento:        #4C74B0;
+  --acento-hover:  #3a5f97;
+  --texto-oscuro:  #232B3A;
+  --texto-medio:   #5A6880;
+}
+
+/* 🎵 MÚSICA — violeta cálido / burdeos */
+body.tema-musica {
+  --crema-fondo:   #F2EDF6;
+  --crema-card:    #F8F4FB;
+  --beige-borde:   #CEBCDB;
+  --acento:        #7E4F9A;
+  --acento-hover:  #6b3f84;
+  --texto-oscuro:  #2D1F38;
+  --texto-medio:   #7A6688;
+}
+
+/* 🎬 PELÍCULAS — rojo cine / carbón */
+body.tema-pelicula {
+  --crema-fondo:   #F5EEEE;
+  --crema-card:    #FAF5F5;
+  --beige-borde:   #DBBFBF;
+  --acento:        #A83232;
+  --acento-hover:  #8f2525;
+  --texto-oscuro:  #2A1A1A;
+  --texto-medio:   #7A5A5A;
+}
