@@ -4,25 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Videojuegos · Nuestro Blog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="CssPopUp.css" />
 </head>
 <body class="tema-juegos">
 
-   <nav>
+  <nav>
     <a href="index.html" class="nav-logo">Nuestro<span>blog</span></a>
-      <ul class="nav-enlaces">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="PaginaVideojuegos.html">Videojuegos</a></li>
-        <li><a href="PaginaMusica.html">Música</a></li>
-        <li><a href="PaginaPelicula.html">Películas</a></li>
+    <ul class="nav-enlaces">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="PaginaVideojuegos.html" class="activo">Videojuegos</a></li>
+      <li><a href="PaginaMusica.html">Música</a></li>
+      <li><a href="PaginaPelicula.html">Películas</a></li>
     </ul>
   </nav>
 
-  <header class="pagina-hero">
-    <span class="icono">🎮</span>
+  <header class="pagina-hero hero-juegos">
+    <div class="px-wrap" aria-hidden="true">
+      <span class="px"></span><span class="px"></span><span class="px"></span>
+      <span class="px"></span><span class="px"></span><span class="px"></span>
+      <span class="px"></span><span class="px"></span><span class="px"></span>
+      <span class="px"></span>
+    </div>
+
+    <div class="hero-logo-wrap" aria-hidden="true">
+      <svg class="hero-logo-svg" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cuerpo del mando con agarres -->
+        <path d="M 20 35 Q 20 20 35 20 L 105 20 Q 120 20 120 35 L 120 58
+                 Q 120 72 108 76 L 95 80 Q 88 84 82 80 L 76 76 L 64 76
+                 L 58 80 Q 52 84 45 80 L 32 76 Q 20 72 20 58 Z"
+              fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
+        <!-- D-pad -->
+        <rect x="41" y="44" width="14" height="5"  rx="1.5" fill="currentColor"/>
+        <rect x="45" y="40" width="5"  height="13" rx="1.5" fill="currentColor"/>
+        <!-- 4 botones -->
+        <circle cx="95" cy="40" r="4.2" class="btn-hero b1"/>
+        <circle cx="103" cy="48" r="4.2" class="btn-hero b2"/>
+        <circle cx="95" cy="56" r="4.2" class="btn-hero b3"/>
+        <circle cx="87" cy="48" r="4.2" class="btn-hero b4"/>
+        <!-- Start / Select -->
+        <rect x="62" y="44" width="7" height="4" rx="2" fill="currentColor" opacity=".45"/>
+        <rect x="71" y="44" width="7" height="4" rx="2" fill="currentColor" opacity=".45"/>
+        <!-- Joystick izq -->
+        <circle cx="42" cy="64" r="7"   fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <circle cx="42" cy="64" r="2.5" fill="currentColor" opacity=".6"/>
+        <!-- Joystick der -->
+        <circle cx="80" cy="64" r="7"   fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <circle cx="80" cy="64" r="2.5" fill="currentColor" opacity=".6"/>
+        <!-- Gatillos L / R -->
+        <path d="M 30 22 Q 28 14 36 13 L 48 13 Q 54 13 54 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 110 22 Q 112 14 104 13 L 92 13 Q 86 13 86 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
     <p class="pagina-tag">Sección</p>
-    <h1>Videojuegos</h1>
+    <h1 class="hero-titulo-glitch" data-text="Videojuegos">Videojuegos</h1>
+    <p class="hero-sub">Análisis &nbsp;·&nbsp; Recomendaciones &nbsp;·&nbsp; Clásicos</p>
   </header>
 
   <main class="contenido">
@@ -31,8 +68,7 @@
     <div class="grid">
 
       <div class="card" tabindex="0" role="button"
-           data-title="NieR: Automata"
-           data-tag="Análisis"
+           data-title="NieR: Automata" data-tag="Análisis"
            data-video="https://www.youtube.com/watch?v=wJxNhJ8fjFk"
            data-audio="canciones/NieR.mp3"
            data-review="NieR: Automata es mucho más que un videojuego: es un ensayo filosófico jugable. Yoko Taro construye un mundo post-apocalíptico donde androides y máquinas libran una guerra eterna, pero lo verdaderamente revolucionario es cómo utiliza la mecánica del juego para transmitir ideas sobre el existencialismo, el propósito y la identidad.<br><br>2B y 9S son protagonistas fascinantes cuya relación evoluciona de formas que pocos guiones de videojuegos han logrado. El combate es frenético y satisfactorio, pero cada rincón del mapa esconde textos, memorias y diálogos que amplían una narrativa de capas casi infinitas.<br><br>Sus múltiples finales no son trucos; son la declaración de intenciones de un creador que confía en la inteligencia del jugador. Una obra que se recuerda mucho después de apagar la consola.">
@@ -43,8 +79,7 @@
       </div>
 
       <div class="card" tabindex="0" role="button"
-           data-title="Resident Evil 4 Remake"
-           data-tag="Recomendación"
+           data-title="Resident Evil 4 Remake" data-tag="Recomendación"
            data-video="https://www.youtube.com/watch?v=isN_Y9ULtXY"
            data-audio="canciones/Residente.mp3"
            data-review="Revisitar uno de los juegos más influyentes de la historia es una apuesta de alto riesgo. Capcom no solo salió airosa: entregó una lección magistral sobre cómo modernizar un clásico sin traicionar su esencia.<br><br>El remake mantiene el ritmo trepidante del original pero introduce a Leon con una profundidad emocional que el juego de 2005 apenas esbozaba. El diseño de niveles —el pueblo, el castillo, la isla— se siente denso y lleno de secretos ejecutados con el motor RE Engine a pleno rendimiento.<br><br>El nuevo sistema de parry añade una capa táctica que hace cada encuentro más satisfactorio. Una demostración de que los remakes pueden ser algo más que nostalgia enlatada.">
@@ -55,8 +90,7 @@
       </div>
 
       <div class="card" tabindex="0" role="button"
-           data-title="Zelda: Ocarina of Time"
-           data-tag="Clásico"
+           data-title="Zelda: Ocarina of Time" data-tag="Clásico"
            data-video="https://www.youtube.com/watch?v=GwKLbjfjpZM"
            data-audio="canciones/Zelda.mp3"
            data-review="Hablar de Ocarina of Time podría parecer arqueología, pero sería un error: este juego inventó un lenguaje visual y de diseño que todavía hablan los mejores títulos de aventura actuales. El Z-targeting, las mazmorras temáticas, la narrativa distribuida por el mapa… todo nació aquí.<br><br>El viaje de Link a través del tiempo no es solo un recurso narrativo brillante; es una forma de estructurar un mundo que se siente vivo y consecuente. Hyrule cambia, envejece y sufre, y ese contraste entre la inocencia de la infancia y la crudeza de la edad adulta es emocionalmente poderoso.<br><br>Ningún jugador debería ignorar esta pieza. No como reliquia, sino como obra de arte funcional que sigue enseñando a diseñadores décadas después de su lanzamiento.">
@@ -99,7 +133,18 @@
 
   <a href="index.html" class="volver">← Volver al inicio</a>
   <footer><p>© 2026 · Nuestroblog</p></footer>
-  <audio id="modal-audio" preload="auto"></audio>
+
+  <!-- Música de fondo (Elden Ring intro) — pon el mp3 en canciones/bg-juegos.mp3 -->
+  <audio id="bg-audio" src="canciones/bg-juegos.mp3" preload="none"></audio>
+  <audio id="modal-audio" preload="none"></audio>
+
+  <button id="bg-control" title="Silenciar música" aria-label="Control música de fondo">
+    <span id="bg-icon">🎵</span>
+    <span class="bg-bar" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+
   <script src="jsPopUp.js"></script>
 </body>
 </html>

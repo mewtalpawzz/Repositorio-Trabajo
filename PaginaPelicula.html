@@ -9,20 +9,57 @@
 </head>
 <body class="tema-pelicula">
 
-   <nav>
+  <nav>
     <a href="index.html" class="nav-logo">Nuestro<span>blog</span></a>
-      <ul class="nav-enlaces">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="PaginaVideojuegos.html">Videojuegos</a></li>
-        <li><a href="PaginaMusica.html">Música</a></li>
-        <li><a href="PaginaPelicula.html">Películas</a></li>
+    <ul class="nav-enlaces">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="PaginaVideojuegos.html">Videojuegos</a></li>
+      <li><a href="PaginaMusica.html">Música</a></li>
+      <li><a href="PaginaPelicula.html" class="activo">Películas</a></li>
     </ul>
   </nav>
 
-  <header class="pagina-hero">
-    <span class="icono">🎬</span>
+  <header class="pagina-hero hero-pelicula">
+    <div class="film-strip left" aria-hidden="true">
+      <span class="film-hole"></span><span class="film-hole"></span><span class="film-hole"></span>
+      <span class="film-hole"></span><span class="film-hole"></span><span class="film-hole"></span>
+      <span class="film-hole"></span><span class="film-hole"></span>
+    </div>
+    <div class="film-strip right" aria-hidden="true">
+      <span class="film-hole"></span><span class="film-hole"></span><span class="film-hole"></span>
+      <span class="film-hole"></span><span class="film-hole"></span><span class="film-hole"></span>
+      <span class="film-hole"></span><span class="film-hole"></span>
+    </div>
+    <div class="projector-beam" aria-hidden="true"></div>
+    <div class="dust-wrap" aria-hidden="true">
+      <span class="dust"></span><span class="dust"></span><span class="dust"></span>
+      <span class="dust"></span><span class="dust"></span><span class="dust"></span>
+      <span class="dust"></span><span class="dust"></span>
+    </div>
+
+    <div class="hero-logo-wrap" aria-hidden="true">
+      <svg class="hero-logo-svg-cine" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="30" width="60" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <circle cx="90" cy="49" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <circle cx="90" cy="49" r="5" class="lens-blink"/>
+        <line x1="50" y1="68" x2="40" y2="82" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="70" y1="68" x2="80" y2="82" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="68" x2="60" y2="82" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <g class="reel">
+          <circle cx="44" cy="43" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+          <line x1="44" y1="34" x2="44" y2="52" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+          <line x1="35" y1="43" x2="53" y2="43" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+          <circle cx="44" cy="43" r="3" fill="currentColor" opacity=".6"/>
+        </g>
+        <line x1="100" y1="46" x2="118" y2="40" stroke="currentColor" stroke-width="1.5" opacity=".4" stroke-linecap="round"/>
+        <line x1="100" y1="49" x2="120" y2="49" stroke="currentColor" stroke-width="1.5" opacity=".5" stroke-linecap="round"/>
+        <line x1="100" y1="52" x2="118" y2="58" stroke="currentColor" stroke-width="1.5" opacity=".4" stroke-linecap="round"/>
+      </svg>
+    </div>
+
     <p class="pagina-tag">Séptimo Arte</p>
-    <h1>Películas</h1>
+    <h1 class="hero-titulo-cine">Películas</h1>
+    <p class="hero-sub">Reseñas &nbsp;·&nbsp; Análisis &nbsp;·&nbsp; Clásicos</p>
   </header>
 
   <main class="contenido">
@@ -31,8 +68,7 @@
     <div class="grid">
 
       <div class="card" tabindex="0" role="button"
-           data-title="Super Mario Bros. La Película"
-           data-tag="Reseña"
+           data-title="Super Mario Bros. La Película" data-tag="Reseña"
            data-video="https://www.youtube.com/watch?v=TnGl01FkMMo"
            data-audio="canciones/Mario.mp3"
            data-review="La adaptación que los fans llevaban décadas esperando llegó, finalmente, sin decepcionar. Illumination y Nintendo lograron traducir el frenetismo, los colores imposibles y las físicas absurdas del videojuego a la pantalla grande sin que el resultado se sintiera forzado.<br><br>Más allá de la nostalgia, la película brilla por su ritmo implacable y una banda sonora de Brian Tyler que reimagina las composiciones de Koji Kondo con una nueva dimensión épica. Jack Black se roba la función entera con un Bowser aterrador y cómico a partes iguales, y su número musical Peaches es uno de los momentos más inesperadamente brillantes del cine de animación reciente.<br><br>No pretende ser una obra de arte profunda. Es un parque de atracciones de 90 minutos diseñado para hacerte sentir como un niño frente a una Super Nintendo, y en eso es absolutamente perfecta.">
@@ -43,8 +79,7 @@
       </div>
 
       <div class="card" tabindex="0" role="button"
-           data-title="Interstellar"
-           data-tag="Recomendación"
+           data-title="Interstellar" data-tag="Recomendación"
            data-video="https://www.youtube.com/watch?v=2LqzF5WauAw"
            data-audio="canciones/Interstellar.mp3"
            data-review="Christopher Nolan utiliza la astrofísica más rigurosa no como un fin en sí mismo, sino como vehículo para explorar preguntas que la ciencia nunca podrá responder del todo: ¿qué nos ata a quienes amamos? ¿Cuánto vale la supervivencia si exige abandonar a quienes dan sentido a esa supervivencia?<br><br>La grandeza de Interstellar no está solo en la precisión científica, sino en la actuación desgarradora de Matthew McConaughey y en la partitura de órgano de Hans Zimmer, que suena como un lamento cósmico que resuena en el pecho mucho después de que los créditos terminen.<br><br>Una película que postula que el amor es, literalmente, la única fuerza capaz de viajar entre dimensiones. Pocos blockbusters se han atrevido a tanto, y menos aún lo han conseguido.">
@@ -55,8 +90,7 @@
       </div>
 
       <div class="card" tabindex="0" role="button"
-           data-title="Terminator 2: El Juicio Final"
-           data-tag="Clásico"
+           data-title="Terminator 2: El Juicio Final" data-tag="Clásico"
            data-video="https://www.youtube.com/watch?v=CRRlbK5w8AE"
            data-audio="canciones/Terminator.mp3"
            data-review="James Cameron hizo lo impensable: tomó una película de terror de ciencia ficción perfecta y la superó transformándola en la cumbre del cine de acción. T2 no solo revolucionó el CGI con el T-1000 de metal líquido, sino que construyó sobre esa base técnica un guion de precisión quirúrgica.<br><br>La evolución de Sarah Connor, de víctima traumatizada a guerrera paranoica, es uno de los estudios de personaje más interesantes de la ciencia ficción popular. Schwarzenegger ofrece aquí la mejor interpretación de su carrera encarnando a una máquina que aprende, torpemente, qué significa el valor de la vida humana.<br><br>Treinta años después de su estreno, las persecuciones siguen siendo inalcanzables y la pregunta que plantea —¿puede cambiarse el destino?— sigue sin respuesta. Un clásico absoluto e indestructible.">
@@ -99,7 +133,18 @@
 
   <a href="index.html" class="volver">← Volver al inicio</a>
   <footer><p>© 2026 · Nuestroblog</p></footer>
-  <audio id="modal-audio" preload="auto"></audio>
+
+  <!-- Música de fondo (Star Wars / Indiana Jones) — pon el mp3 en canciones/bg-pelicula.mp3 -->
+  <audio id="bg-audio" src="canciones/bg-pelicula.mp3" preload="none"></audio>
+  <audio id="modal-audio" preload="none"></audio>
+
+  <button id="bg-control" title="Silenciar música" aria-label="Control música de fondo">
+    <span id="bg-icon">🎵</span>
+    <span class="bg-bar" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+
   <script src="jsPopUp.js"></script>
 </body>
 </html>
